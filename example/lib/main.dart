@@ -63,8 +63,8 @@ class _MyAppState extends State<MyApp> {
                   stream: WeightPlugin.weightStream,
                   initialData: MethodCall(''),
                   builder: (BuildContext context, AsyncSnapshot<MethodCall> snapt) {
-                    if (snapt.data.arguments != null) {
-                      _weightMessage = json.encode(snapt.data.arguments);
+                    if (snapt.data?.arguments != null) {
+                      _weightMessage = json.encode(snapt.data?.arguments);
                     }
                     return Text('weight : $_weightMessage\n');
                   }),
